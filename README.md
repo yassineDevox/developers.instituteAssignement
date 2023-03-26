@@ -21,7 +21,7 @@ The loop starts with `i = 0` and continues until `i < 4`, increasing the value o
 The code inside the loop, `console.log("the current number is " + i)`, is executed for each iteration, printing the current value of i.
 
 ## FlowChart 
-![flowChartLoop.png ](https://github.com/yassineDevox/developers.instituteAssignement/raw/master/flowChartLoop.png)
+![flowChartLoop.png ](https://github.com/yassineDevox/developers.instituteAssignement/raw/main/flowChartLoop.png)
 
 
 # Functions lesson structure
