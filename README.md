@@ -1,6 +1,6 @@
 # Asignements
 * [The logic behind a for loop](#explain-for-loop)
-* [JavaScript Functions - 3-hour Lesson Outline](#javaScript-functions-3-hour-lesson-outline)
+* [JavaScript Functions - 3-hour Lesson Outline](#javaScript-functions-\-3-hour-lesson-outline)
 
 # Explain For Loop 
 In this document, we will discuss how to explain the logic behind a for loop to students. We will consider what demonstrations and images could be used to make the concept more accessible and engaging.
