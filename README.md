@@ -25,7 +25,6 @@ The code inside the loop, `console.log("the current number is " + i)`, is execut
 
 
 # JavaScript Functions 3 hours Lesson Outline
-# JavaScript Functions - 3-hour Lesson Outline
 ## Functions in JavaScript
 ### Theory
 A function is a block of code that can be called and executed multiple times throughout a program. It helps to make code more modular and reusable. The syntax for creating a function in JavaScript is:
