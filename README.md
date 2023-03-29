@@ -25,85 +25,222 @@ The code inside the loop, `console.log("the current number is " + i)`, is execut
 
 
 # JavaScript Functions 3 hours Lesson Outline
+# JavaScript Functions - 3-hour Lesson Outline
+## Functions in JavaScript
+### Theory
+A function is a block of code that can be called and executed multiple times throughout a program. It helps to make code more modular and reusable. The syntax for creating a function in JavaScript is:
+```javascript
+function name(parameter1, parameter2, ... parameterN) {
+ // body
+}
+```
 
-## Introduction (15 minutes)
++ `functionName`: the name of the function.
++ `parameters`: variables that are passed into the function when it's called.
++ `function body` : the code that executes when the function is called.
++ `return`: the value that the function outputs when it's called.
 
-- Briefly introduce JavaScript functions
-- Discuss the importance of functions in programming
-- Explain the concept of code reusability
+To call a function, use its name followed by parentheses with the required arguments (if any).
+```javascript
+functionName(arguments);
+```
++ `Parameters and arguments` are often used interchangeably, but they are slightly different. Parameters are variables declared in the function definition, whereas arguments are the actual values passed into the function when it's called.
 
-## Function Declaration (30 minutes)
++ `The return keyword` is used to output a value from a function. When the function is called, the return value is passed back to the line of code that called the function.
 
-1. Function syntax (10 minutes)
-   - Explain the syntax for declaring a function
-   - Provide an example of a function declaration
++ `Default parameters` allow you to set default values for parameters in case they are not passed in. This can make your code more concise and easier to read.
 
-2. Function invocation (10 minutes)
-   - Explain how to call or invoke a function
-   - Provide an example of function invocation
++ `Scope` refers to the accessibility of variables within a program. Variables declared inside a function are only accessible within that function (local scope), whereas variables declared outside of a function can be accessed from anywhere in the program (global scope).
 
-3. Local variables (10 minutes)
-   - Explain the concept of local variables
-   - Discuss the scope of local variables
-   - Provide an example of using local variables within a function
 
-## Function Expressions (30 minutes)
+### Practice
+#### Function Declaration
+```javascript 
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
 
-1. Anonymous functions (10 minutes)
-   - Explain the concept of anonymous functions
-   - Provide an example of an anonymous function
+greet("John"); // Output: "Hello, John!"
+```
+#### Anonymous Function
+You can also create anonymous functions, which can be used as arguments or assigned to variables:
+```javascript 
+const square = function(number) {
+  return number * number;
+};
 
-2. Function expressions (10 minutes)
-   - Explain the differences between function declarations and function expressions
-   - Provide an example of a function expression
+console.log(square(5)); // Output: 25
+```
+#### Arrow Function
+A more concise syntax for defining functions is the arrow function:
 
-3. Arrow functions (10 minutes)
-   - Introduce arrow functions and their syntax
-   - Discuss the benefits of using arrow functions
-   - Provide an example of an arrow function
+```javascript 
+const square = number => {
+  return number * number;
+};
 
-## Break (15 minutes)
+console.log(square(3)); // Output: 9
+```
+#### Parameters and Arguments
+```javascript
+function addNumbers(num1, num2) {
+  return num1 + num2;
+}
 
-## Parameters and Arguments (30 minutes)
+const result = addNumbers(3, 5);
+console.log(result); // Output: 8
 
-1. Parameters (10 minutes)
-   - Explain the concept of function parameters
-   - Provide an example of defining and using parameters in a function
+```
+#### Return keyword
+```javascript
+function double(number) {
+  return number * 2;
+}
 
-2. Arguments (10 minutes)
-   - Explain the concept of function arguments
-   - Provide an example of passing arguments to a function
+const result = double(5);
+console.log(result); // Output: 10
+```
+#### Default Parameters
+```javascript
+function greet(name = "stranger") {
+  console.log(`Hello, ${name}!`);
+}
 
-3. Default values (10 minutes)
-   - Explain the concept of default values for parameters
-   - Provide an example of setting default values for function parameters
+greet(); // Output: "Hello, stranger!"
+greet("John"); // Output: "Hello, John!"
 
-## Return Statement (30 minutes)
+```
+#### Variables Scope
+```javascript 
+const globalVariable = "I am global";
 
-1. Return values (10 minutes)
-   - Explain the concept of returning values from functions
-   - Provide an example of a function with a return value
+function printVariables() {
+  const localVariable = "I am local";
+  console.log(globalVariable); // Output: "I am global"
+  console.log(localVariable); // Output: "I am local"
+}
 
-2. Return statement (10 minutes)
-   - Explain the use of the return statement in functions
-   - Provide an example of using the return statement
+printVariables();
+console.log(globalVariable); // Output: "I am global"
+console.log(localVariable); // Output: Uncaught ReferenceError: localVariable is not defined
 
-3. Function chaining (10 minutes)
-   - Explain the concept of function chaining
-   - Provide an example of chaining functions with return values
+```
+### Exercises
+1. Write a function called sum that takes two numbers as parameters and returns their sum.
+```javascript
+function sum(a, b) {
+  return a + b;
+}
 
-## Function Recap and Exercises (30 minutes)
+console.log(sum(3, 4)); // Output: 7
 
-1. Recap (10 minutes)
-   - Summarize the key concepts covered in the lesson
+```
+2. Write a function called double that takes a number as a parameter and returns its double.
+```javascript
+function double(number) {
+  return number * 2;
+}
 
-2. Exercises (20 minutes)
-   - Provide a set of exercises for students to practice the concepts learned
+console.log(double(5)); // Output: 10
+```
+3. Write a function called isAdult that takes a number as a parameter and returns true if the number is 18 or higher, and false otherwise.
+```javascript 
+function isAdult(age) {
+  if (age >= 18) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
-## Conclusion (5 minutes)
+console.log(isAdult(20)); // Output: true
+console.log(isAdult(16)); // Output: false
 
-- Wrap up the lesson
-- Encourage students to continue practicing and learning about JavaScript functions
+```
+4. Create a function called getGrade that takes a number as a parameter and returns a letter grade based on the following conditions:
++ If the number is 90 or higher, return 'A'.
++ If the number is between 80 and 89 (inclusive), return 'B'.
++ If the number is between 70 and 79 (inclusive), return 'C'.
++ If the number is between 60 and 69 (inclusive), return 'D'.
++ If the number is below 60, return 'F'.
+```javascript
+function getGrade(score) {
+  if (score >= 90) {
+    return 'A';
+  } else if (score >= 80 && score <= 89) {
+    return 'B';
+  } else if (score >= 70 && score <= 79) {
+    return 'C';
+  } else if (score >= 60 && score <= 69) {
+    return 'D';
+  } else {
+    return 'F';
+  }
+}
 
+console.log(getGrade(95)); // Output: A
+console.log(getGrade(85)); // Output: B
+console.log(getGrade(75)); // Output: C
+console.log(getGrade(65)); // Output: D
+console.log(getGrade(55)); // Output: F
+
+```
+5. Write a function called formatName that takes a first name and a last name as parameters and returns a formatted full name string. If no last name is provided, the function should use the default value of an empty string.
+
+```javascript
+function formatName(firstName, lastName = "") {
+  if (lastName) {
+    return `${firstName} ${lastName}`;
+  } else {
+    return firstName;
+  }
+}
+
+console.log(formatName("John", "Doe")); // Output: John Doe
+console.log(formatName("Jane")); // Output: Jane
+
+```
+6. Create a function called multiplyNumbers that takes two numbers as parameters and returns their product. If only one number is provided, the function should use the default value of 1 for the second number.
+
+```javascript
+function multiplyNumbers(number1, number2 = 1) {
+  return number1 * number2;
+}
+
+console.log(multiplyNumbers(2, 3)); // Output: 6
+console.log(multiplyNumbers(4)); // Output: 4
+
+```
+7. Write a function called printName that prints the value of a variable called name that is declared outside of the function.
+```javascript
+const name = "John";
+
+function printName() {
+  console.log(name);
+}
+
+printName(); // Output: John
+```
+8. What will be the output of the above code snippet?
+
+```javascript
+let count = 0;
+
+function incrementCount() {
+  let count = 1;
+  count++;
+  console.log(count);
+}
+
+incrementCount();
+console.log(count);
+
+```
+
+The function incrementCount() declares a new variable called count within the function scope, which shadows the count variable declared in the outer scope. The output of the function is 2, because count is incremented from 1 to 2. The output of the last line is 0, because it prints the value of the count variable in the outer scope, which was not affected by the function.
+```javascript
+incrementCount(); // Output: 2
+console.log(count); // Output: 0
+```
 ## Authors
 - [@yassineDevox](https://www.github.com/yasssineDevox)
